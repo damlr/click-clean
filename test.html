@@ -1,0 +1,168 @@
+<div class="message-form" id="message-display">
+    <form style="flex: 1; margin-right: 10px;">
+      <table style="width: 100%;align-items: baseline;">
+        <tr>
+        <div class="overflow-y">
+          <div class="inline-block magic-toggle" style="--backgroundToggle: #EE7E56;">
+            <label class="switch">
+              <input type="checkbox" id="linkedToContact" name="linkedToContact" checked>
+              <span class="slider"></span>
+            </label>
+            <legend class="flex space-between narrow">
+              <fieldset for="linkedToContact">Informations contact</fieldset>
+            </legend>
+          </div>
+          <div class="alert-message warning orange warning-nocaller">
+            <div>Pas d'appelant sélectionné</div>
+          </div>
+  
+          <div class="patient" >
+            <div class="patient-search" >
+              <div class="input-append" >
+                <div class="inputandbutton" >
+                  <div class="input-wrapper" >
+                    <input type="text" name="patient" class="search-patient" autocomplete="off" />
+                  </div>
+                  <button class="btn create nexttoinput" type="button">
+                    <span style="margin-left: 225px ;"><i class="fas fa-users"></i></span>
+                  </button>
+                </div>
+              </div>
+              <ul id="contacts-results" class="patient-results"></ul>
+            </div>
+            <div id="caller-informations" class="blocking-overlay">
+              <div id="contact-sheet-infos">
+                <div class="buttons flex">
+                  <button type="button" id="display-history" class="btn-tempora-flat grey">
+                  <i class="fas fa-user-clock"></i> Historique
+                  </button>
+                  <button type="button" id="search-family" class="btn-tempora-flat grey">
+                    <i class="fas fa-users"></i>
+                    Famille
+                  </button>
+                  <button type="button" id="duplicate-contact" class="btn-tempora-flat grey">
+                    <i class="fas fa-clone"></i>
+                    Dupliquer
+                  </button>
+                  <button type="button" id="active-online-apt" class="btn-tempora-flat grey">
+                    <i class="fas fa-at"></i>
+                    Rdv internet
+                  </button>
+                </div>
+                <input type="hidden" name="id" />
+                <div class="flex">
+                  <label class="radio-magic">
+                    <input type="radio" name="gender" value="female" /><span class="checkmark"></span>Madame
+                  </label>
+                  <label class="radio-magic">
+                    <input type="radio" name="gender" value="male" /><span class="checkmark"></span> Monsieur
+                  </label>
+                  <label class="radio-magic">
+                    <input type="radio" name="gender" value="child" /><span class="checkmark"></span> Enfant
+                  </label>
+                  <label class="radio-magic">
+                    <input type="radio" name="gender" value="lawyer" /><span class="checkmark"></span> Maître
+                  </label>
+                  <label class="radio-magic">
+                    <input type="radio" name="gender" value="doctor" /><span class="checkmark"></span> Docteur
+                  </label>
+                </div>
+                <div class="name-container">
+                  <input type="checkbox" id="edit-name" class="hide">
+                  <label for="edit-name" class="btn btn-tempora-grey">
+                    <span id="history-noempty" class="hide"></span>
+                    <i class="fas fa-pen"></i>
+                  </label>
+                  <input type="text" name="name" placeholder="Nom" autocomplete="off" />
+                </div>
+                <div class="flex">
+                  <div class="inline-block">
+                    <input name="active" id="active" type="checkbox" checked class="custom-input magic-checkbox" />
+                    <label for="active">Actif</label>
+                  </div>
+                  <div class="inline-block">
+                    <input name="unwanted" id="unwanted" type="checkbox" class="custom-input magic-checkbox" />
+                    <label for="unwanted">Indésirable</label>
+                  </div>
+                  <div id="caller-labels-div">
+                    <select id="caller-labels" name="caller-labels" multiple
+                      class="chosen-container chosen-container-multi chosen-with-drop chosen-container-active"
+                      style="height: 300px;" data-placeholder="Choisir une ou plusieurs étiquettes"></select>
+                  </div>
+                </div>
+                <div class="count-missed">Pas venu à <span></span> rendez-vous</div>
+                <fieldset>
+                  <div class="inputs-patients"></div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+  
+        <div class="space-between">
+          <legend class="flex-0-0-auto"> Informations message</legend>
+          <div class="control-group hide-leftbar border space-between">
+            <div class="inline-block magic-toggle text-color" style="--backgroundToggle: #EE7E56;">
+              <div class="controls inline-block text-color">
+                <label class="switch">
+                  <input type="checkbox" id="linkedToContact" name="linkedToContact" checked>
+                  <span class="slider text-color">
+                </label><br><br>
+              </div> Urgent
+            </div>
+            <div class="flex-1-1-auto border">
+              <div class="control-group">
+                <label for="ts-m-template" class="control-label text-color"> Message type :</label>
+                <div class="controls text-color">
+                  <select name="message-template" id="ts-m-template">
+                  </select>
+                </div>
+              </div>
+              <fieldset>
+                <div class="inputs-msgs text-color"></div>
+              </fieldset>
+              </legend>
+            </div>
+          </div>
+        </div>
+      <div class="overflow-y">
+        <legend class="flex space-between narrow">Organigramme</legend>
+        <div id="organisation-chart" style="width: 100%;">
+          <div class="container" style="width: 100%">
+            <input type="search" name="searchMember" class="input-form-wapper" placeholder="Rechercher">
+            <i class="icon-search-client"></i>
+            <ul class="chart-ul"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <label class="chkbx hide">
+            <input type="checkbox" name="notify-chart" id="notify-chart" class="custom-input magic-checkbox">
+            <label class="chkbx hide">
+              <input type="checkbox" name="notify-chart" id="notify-chart" class="custom-input magic-checkbox">
+            </label>
+          </label>
+        </div>
+      </div>
+    </td>
+  </tr>
+  </table>
+  
+  
+  
+  
+      <footer class="footer-fixed">
+        <div id="form-buttons" class="btn-right">
+          <div class="flex right-part">
+          <button type="btn-right flex" class="btn-tempora-grey btn btn-size placement" action="cancel">
+            <i class="far fa-times-circle"></i> Annuler
+          </button>
+          <button type="btn-right flex" class="btn btn-tempora-green btn-size placement" action="submit-form">
+            <i class="far fa-paper-plane"></i> Envoyer
+          </button>
+          </div>
+        </div>
+      </footer>
+    </form>
+  </div>
+  
