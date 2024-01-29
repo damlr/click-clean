@@ -1,5 +1,7 @@
 package com.click_and_clean;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.HashMap;
 
 /**
@@ -17,5 +19,11 @@ public class Proprietaire extends Utilisateur {
 				dateOfBirth,
 				dateOfCreation, comment, globalGrade);
 		// TODO Auto-generated constructor stub
+	}
+
+	public void new_property(){
+		try ( Connection connection = DriverManager.getConnection("url_de_connxion", "dam", "root")
+
+		)
 	}
 }
