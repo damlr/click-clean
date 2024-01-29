@@ -1,0 +1,9 @@
+//methode pour creer un compte pour un invité/un guest
+public void creerCompte( ) {
+		this.creerCompte() ;
+}
+
+//methode pour consulter les annonces pour un invité/un guest
+public void consulterAnnonce( ) {
+		this.consulterAnnonce() ;
+}
