@@ -1,6 +1,7 @@
 package com.click_and_clean;
 
 public class Property {
+    /** mise en place des attribut */
     private String adress;
     private int num_adress;
     private int surface;
@@ -13,6 +14,7 @@ public class Property {
         this.surface = surface;
     }
 
+    /** declaration des getters et setters */
     public String getAdress() {
         return adress;
     }
@@ -44,4 +46,5 @@ public class Property {
     public void setCommentaire_proprietee(String commentaire_proprietee) {
         this.commentary_property = commentaire_proprietee;
     }
+
 }
