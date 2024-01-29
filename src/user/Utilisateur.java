@@ -1,8 +1,5 @@
-package user;
+package com.click_and_clean;
 
-<<<<<<< Updated upstream
-public class Utilisateur {
-=======
 import java.util.HashMap;
 
 /**
@@ -13,8 +10,10 @@ import java.util.HashMap;
  */
 public class Utilisateur {
 
->>>>>>> Stashed changes
 	private String username;
+	private String firstName;
+	private String secondName;
+	private int age;
 	private String password;
 	private String profilePicture;
 	private String email;
@@ -22,10 +21,17 @@ public class Utilisateur {
 	private String phoneNumber;
 	private String dateOfBirth;
 	private String dateOfCreation;
+	private HashMap<Float, String> comment;
+	float globalGrade;
 
-	public Utilisateur(String username, String password, String profilePicture, String email, String description,
-			String phoneNumber, String dateOfBirth, String dateOfCreation) {
+	public Utilisateur(String username, String firstName, String secondName, int age, String password,
+			String profilePicture, String email, String description, String phoneNumber, String dateOfBirth,
+			String dateOfCreation, HashMap<Float, String> comment, float globalGrade) {
+		super();
 		this.username = username;
+		this.firstName = firstName;
+		this.secondName = secondName;
+		this.age = age;
 		this.password = password;
 		this.profilePicture = profilePicture;
 		this.email = email;
@@ -33,6 +39,16 @@ public class Utilisateur {
 		this.phoneNumber = phoneNumber;
 		this.dateOfBirth = dateOfBirth;
 		this.dateOfCreation = dateOfCreation;
+		this.comment = comment;
+		this.globalGrade = globalGrade;
+	}
+
+	public float getGlobalGrade() {
+		return globalGrade;
+	}
+
+	public void setGlobalGrade(float globalGrade) {
+		this.globalGrade = globalGrade;
 	}
 
 	public String getUsername() {
@@ -55,14 +71,11 @@ public class Utilisateur {
 		return profilePicture;
 	}
 
-<<<<<<< Updated upstream
-=======
 	/**
 	 * String indiquant le nom de l'image pour aller la chercher dans la bdd
 	 * 
 	 * @return
 	 */
->>>>>>> Stashed changes
 	public void setProfilePicture(String profilePicture) {
 		this.profilePicture = profilePicture;
 	}
@@ -95,14 +108,11 @@ public class Utilisateur {
 		return dateOfBirth;
 	}
 
-<<<<<<< Updated upstream
-=======
 	/**
 	 * Date au format jour/mois/annee
 	 * 
 	 * @return
 	 */
->>>>>>> Stashed changes
 	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
@@ -114,8 +124,6 @@ public class Utilisateur {
 	public void setDateOfCreation(String dateOfCreation) {
 		this.dateOfCreation = dateOfCreation;
 	}
-<<<<<<< Updated upstream
-=======
 
 	public HashMap<Float, String> getComment() {
 		return comment;
@@ -165,5 +173,4 @@ public class Utilisateur {
 				+ getPhoneNumber() + ", getDateOfBirth()=" + getDateOfBirth() + ", getDateOfCreation()="
 				+ getDateOfCreation() + "]";
 	}
->>>>>>> Stashed changes
 }

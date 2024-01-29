@@ -1,15 +1,24 @@
-package user;
+package com.click_and_clean;
 
-public class Cleaner extends Utilisateur{
+import java.util.HashMap;
+
+/**
+ * Classe de prestataire
+ * 
+ * @author Simon
+ */
+public class Cleaner extends Utilisateur {
 	int missionDone;
 	int array;
 	int salaryPerHour;
 	int experience;
-	
-	public Cleaner(String username, String password, String profilePicture, String email, String description,
-			String phoneNumber, String dateOfBirth, String dateOfCreation, int missionDone, int array,
+
+	public Cleaner(String username, String firstName, String secondName, int age, String password,
+			String profilePicture, String email, String description, String phoneNumber, String dateOfBirth,
+			String dateOfCreation, HashMap<Float, String> comment, float globalGrade, int missionDone, int array,
 			int salaryPerHour, int experience) {
-		super(username, password, profilePicture, email, description, phoneNumber, dateOfBirth, dateOfCreation);
+		super(username, firstName, secondName, age, password, profilePicture, email, description, phoneNumber,
+				dateOfBirth, dateOfCreation, comment, globalGrade);
 		this.missionDone = missionDone;
 		this.array = array;
 		this.salaryPerHour = salaryPerHour;
@@ -28,6 +37,12 @@ public class Cleaner extends Utilisateur{
 		return array;
 	}
 
+	/**
+	 * Rayon en kilometre autour du domicile du prestataire definissant la zone
+	 * d'action du cleaner
+	 * 
+	 * @param array
+	 */
 	public void setArray(int array) {
 		this.array = array;
 	}
@@ -36,10 +51,20 @@ public class Cleaner extends Utilisateur{
 		return salaryPerHour;
 	}
 
+	/**
+	 * Salaire horraire définit par le préstataire
+	 * 
+	 * @param salaryPerHour
+	 */
 	public void setSalaryPerHour(int salaryPerHour) {
 		this.salaryPerHour = salaryPerHour;
 	}
 
+	/**
+	 * Nombre de mission deja effectue par le cleaner
+	 * 
+	 * @return
+	 */
 	public int getExperience() {
 		return experience;
 	}
