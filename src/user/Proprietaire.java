@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 public class Proprietaire extends Utilisateur{
 	float globalGrade;
-	HashMap<Float,String> comment;
+	HashMap<Float, String> comment;
 	
 	public Proprietaire(String username, String password, String profilePicture, String email, String description,
 			String phoneNumber, String dateOfBirth, String dateOfCreation, float globalGrade,
