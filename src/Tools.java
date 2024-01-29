@@ -45,8 +45,8 @@ public class Tools {
     /** method pour calculer les nombres de mission sur le site */
     public void countMissions() {
         // Créer une connexion à la base de données
-        try (Connection connection = DriverManager.getConnection("votre_url_de_connexion", "votre_utilisateur",
-                "votre_mot_de_passe")) {
+        try (Connection connection = DriverManager.getConnection("url_de_connexion", "root",
+                "")) {
             // Préparer la requête SQL
             String sql = "SELECT COUNT(*) AS nombre_missions FROM mission WHERE statut = 'available'";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
