@@ -2,7 +2,7 @@ package clickClean;
 
 public class Mission {
 	
-	private int surfaceBien;
+	private int surfaceBien;       
 	private String rueAdresse;
 	private float remuneration;
 	private int numAdresse;
@@ -58,6 +58,9 @@ public class Mission {
 		return typePrestation;
 	}
 	
+	/**
+	 * Méthode calcul de la zone d'action par rapport à l'adresse
+	 */
 	
 	
 }
