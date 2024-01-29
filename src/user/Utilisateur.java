@@ -22,7 +22,7 @@ public class Utilisateur {
 
 	public Utilisateur(String username, String firstName, String secondName, int age, String password,
 			String profilePicture, String email, String description, String phoneNumber, String dateOfBirth,
-			String dateOfCreation, HashMap<Float, String> comment, float globalGrade) {
+			String dateOfCreation, float globalGrade) {
 		super();
 		this.username = username;
 		this.firstName = firstName;
@@ -35,7 +35,7 @@ public class Utilisateur {
 		this.phoneNumber = phoneNumber;
 		this.dateOfBirth = dateOfBirth;
 		this.dateOfCreation = dateOfCreation;
-		this.comment = comment;
+		this.comment = new HashMap<Float, String>();
 		this.globalGrade = globalGrade;
 	}
 
@@ -122,10 +122,11 @@ public class Utilisateur {
 	}
 	/**
 	 * Hashmap regroupant les commentaires attribue a l'utilisateur avec la note en float et le commentaire en String
-	 * @param comment
+	 * @param a Note en decimal
+	 * @param b Commentaire
 	 */
-	public void setComment(HashMap<Float, String> comment) {
-		this.comment = comment;
+	public void setComment(float a, String b) {
+		this.comment.put(a, b);
 	}
 	
 	public String getFirstName() {

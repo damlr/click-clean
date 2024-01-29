@@ -7,21 +7,34 @@ import java.util.HashMap;
  * @author Simon
  */
 public class Cleaner extends Utilisateur{
-	int missionDone;
-	int array;
-	int salaryPerHour;
-	int experience;
+	private int missionDone;
+	private int array;
+	private int salaryPerHour;
+	private int experience;
+	private HashMap<String, String>hours;
 
 	public Cleaner(String username, String firstName, String secondName, int age, String password,
 			String profilePicture, String email, String description, String phoneNumber, String dateOfBirth,
-			String dateOfCreation, HashMap<Float, String> comment, float globalGrade, int missionDone, int array,
-			int salaryPerHour, int experience) {
+			String dateOfCreation, float globalGrade, int missionDone, int array, int salaryPerHour, int experience,
+			HashMap<String, String> hours) {
 		super(username, firstName, secondName, age, password, profilePicture, email, description, phoneNumber,
-				dateOfBirth, dateOfCreation, comment, globalGrade);
+				dateOfBirth, dateOfCreation, globalGrade);
 		this.missionDone = missionDone;
 		this.array = array;
 		this.salaryPerHour = salaryPerHour;
 		this.experience = experience;
+		this.hours = hours;
+	}
+	public HashMap<String, String> getHours() {
+		return hours;
+	}
+	/**
+	 * Hashmap du planning des jours de la semaine
+	 * @param a Jours au format suivant: MON, TUE, WED, THU, FRI, SAT, SUN
+	 * @param b Plage horraire en format 24h associé au jour par exemple 8-13, 14-18
+	 */
+	public void setHours(String a, String b) {
+		this.hours.put(a,b);
 	}
 
 	public int getMissionDone() {
