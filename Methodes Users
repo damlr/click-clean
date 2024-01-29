@@ -15,5 +15,5 @@ public void creerLitige(Utilisateur utilisateur) {
 
 //methode pour calculer la moyenne de notes d'un utilisateur
 public void calculerMoyenne(Utilisateur utilisateur) {
-		this.calculerMoyenneLitige(utilisateur) ;
+		this.calculerMoyenne(utilisateur) ;
 }
