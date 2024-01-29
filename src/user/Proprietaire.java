@@ -1,31 +1,18 @@
 package user;
+
 import java.util.HashMap;
 
+/**
+ * Classe de demandeur de menage, implementer un vector de Propriete quand la classe sera faites
+ * @author Simon
+ */
 public class Proprietaire extends Utilisateur{
-	float globalGrade;
-	HashMap<Float,String> comment;
-	
-	public Proprietaire(String username, String password, String profilePicture, String email, String description,
-			String phoneNumber, String dateOfBirth, String dateOfCreation, float globalGrade,
-			HashMap<Float, String> comment) {
-		super(username, password, profilePicture, email, description, phoneNumber, dateOfBirth, dateOfCreation);
-		this.globalGrade = globalGrade;
-		this.comment = comment;
-	}
 
-	public float getGlobalGrade() {
-		return globalGrade;
-	}
-
-	public void setGlobalGrade(float globalGrade) {
-		this.globalGrade = globalGrade;
-	}
-
-	public HashMap<Float, String> getComment() {
-		return comment;
-	}
-
-	public void setComment(HashMap<Float, String> comment) {
-		this.comment = comment;
+	public Proprietaire(String username, String firstName, String secondName, int age, String password,
+			String profilePicture, String email, String description, String phoneNumber, String dateOfBirth,
+			String dateOfCreation, HashMap<Float, String> comment, float globalGrade) {
+		super(username, firstName, secondName, age, password, profilePicture, email, description, phoneNumber, dateOfBirth,
+				dateOfCreation, comment, globalGrade);
+		// TODO Auto-generated constructor stub
 	}
 }
