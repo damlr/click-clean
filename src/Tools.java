@@ -63,14 +63,9 @@ public class Tools {
         }
     }
 
+    /** method de cacul de mission disponible par rapport à la zone */
     public void countMissionsInArea() {
-        // Même approche pour compter le nombre de missions dans une zone spécifique
-        // Utilisez une requête adaptée pour votre base de données
-    }
 
     }
 
-    /** method pour calculer le nombre de mission dans la zone */
-    public void count_mission_area() {
-
-    }
+}
