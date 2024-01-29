@@ -1,5 +1,6 @@
 package user;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -8,11 +9,21 @@ import java.util.HashMap;
  */
 public class Proprietaire extends Utilisateur{
 
+	ArrayList<Property> properties;
+
 	public Proprietaire(String username, String firstName, String secondName, int age, String password,
 			String profilePicture, String email, String description, String phoneNumber, String dateOfBirth,
-			String dateOfCreation, HashMap<Float, String> comment, float globalGrade) {
-		super(username, firstName, secondName, age, password, profilePicture, email, description, phoneNumber, dateOfBirth,
-				dateOfCreation, comment, globalGrade);
-		// TODO Auto-generated constructor stub
+			String dateOfCreation, HashMap<Float, String> comment, float globalGrade, ArrayList<Property> properties) {
+		super(username, firstName, secondName, age, password, profilePicture, email, description, phoneNumber,
+				dateOfBirth, dateOfCreation, comment, globalGrade);
+		this.properties = new ArrayList<Property>();
+	}
+
+	public ArrayList<Property> getProperties() {
+		return properties;
+	}
+
+	public void setProperties(Property properties) {
+		this.properties.add(properties);
 	}
 }
