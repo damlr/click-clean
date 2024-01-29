@@ -21,22 +21,18 @@ public class Utilisateur {
 	float globalGrade;
 
 	public Utilisateur(String username, String firstName, String secondName, int age, String password,
-			String profilePicture, String email, String description, String phoneNumber, String dateOfBirth,
-			String dateOfCreation, float globalGrade) {
+			String email, String description, String phoneNumber, String dateOfBirth) {
 		super();
 		this.username = username;
 		this.firstName = firstName;
 		this.secondName = secondName;
 		this.age = age;
 		this.password = password;
-		this.profilePicture = profilePicture;
 		this.email = email;
 		this.description = description;
 		this.phoneNumber = phoneNumber;
 		this.dateOfBirth = dateOfBirth;
-		this.dateOfCreation = dateOfCreation;
 		this.comment = new HashMap<Float, String>();
-		this.globalGrade = globalGrade;
 	}
 
 	public float getGlobalGrade() {
@@ -162,5 +158,11 @@ public class Utilisateur {
 				+ ", getEmail()=" + getEmail() + ", getDescription()=" + getDescription() + ", getPhoneNumber()="
 				+ getPhoneNumber() + ", getDateOfBirth()=" + getDateOfBirth() + ", getDateOfCreation()="
 				+ getDateOfCreation() + "]";
+	}
+	public void comment(Utilisateur a,float note, String comment) {
+		a.setComment(note,comment);
+	}
+	public void printComment() {
+		System.out.println(this.comment);
 	}
 }

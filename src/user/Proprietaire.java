@@ -1,7 +1,6 @@
 package user;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Classe de demandeur de menage, implementer un vector de Propriete quand la classe sera faites
@@ -11,14 +10,12 @@ public class Proprietaire extends Utilisateur{
 
 	ArrayList<Property> properties;
 
-	public Proprietaire(String username, String firstName, String secondName, int age, String password,
-			String profilePicture, String email, String description, String phoneNumber, String dateOfBirth,
-			String dateOfCreation, float globalGrade, ArrayList<Property> properties) {
-		super(username, firstName, secondName, age, password, profilePicture, email, description, phoneNumber,
-				dateOfBirth, dateOfCreation, globalGrade);
-		this.properties = properties;
+	public Proprietaire(String username, String firstName, String secondName, int age, String password, String email,
+			String description, String phoneNumber, String dateOfBirth) {
+		super(username, firstName, secondName, age, password, email, description, phoneNumber, dateOfBirth);
+		// TODO Auto-generated constructor stub
 	}
-
+	
 	public ArrayList<Property> getProperties() {
 		return properties;
 	}

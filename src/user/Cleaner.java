@@ -12,18 +12,10 @@ public class Cleaner extends Utilisateur{
 	private int salaryPerHour;
 	private int experience;
 	private HashMap<String, String>hours;
-
-	public Cleaner(String username, String firstName, String secondName, int age, String password,
-			String profilePicture, String email, String description, String phoneNumber, String dateOfBirth,
-			String dateOfCreation, float globalGrade, int missionDone, int array, int salaryPerHour, int experience,
-			HashMap<String, String> hours) {
-		super(username, firstName, secondName, age, password, profilePicture, email, description, phoneNumber,
-				dateOfBirth, dateOfCreation, globalGrade);
-		this.missionDone = missionDone;
-		this.array = array;
-		this.salaryPerHour = salaryPerHour;
-		this.experience = experience;
-		this.hours = hours;
+	
+	public Cleaner(String username, String firstName, String secondName, int age, String password, String email,
+			String description, String phoneNumber, String dateOfBirth) {
+		super(username, firstName, secondName, age, password, email, description, phoneNumber, dateOfBirth);
 	}
 	public HashMap<String, String> getHours() {
 		return hours;

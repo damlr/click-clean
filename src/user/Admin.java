@@ -6,11 +6,9 @@ package user;
  */
 public class Admin extends Utilisateur{
 
-	public Admin(String username, String firstName, String secondName, int age, String password, String profilePicture,
-			String email, String description, String phoneNumber, String dateOfBirth, String dateOfCreation,
-			float globalGrade) {
-		super(username, firstName, secondName, age, password, profilePicture, email, description, phoneNumber, dateOfBirth,
-				dateOfCreation, globalGrade);
+	public Admin(String username, String firstName, String secondName, int age, String password, String email,
+			String description, String phoneNumber, String dateOfBirth) {
+		super(username, firstName, secondName, age, password, email, description, phoneNumber, dateOfBirth);
 		// TODO Auto-generated constructor stub
 	}
 }
