@@ -11,11 +11,20 @@ public class Cleaner extends Utilisateur{
 	private int array;
 	private int salaryPerHour;
 	private int experience;
+	String statut;
 	private HashMap<String, String>hours;
 	
 	public Cleaner(String username, String firstName, String secondName, int age, String password, String email,
 			String description, String phoneNumber, String dateOfBirth) {
-		super(username, firstName, secondName, age, password, email, description, phoneNumber, dateOfBirth);
+		super(username, firstName, secondName, age, password, email, phoneNumber, dateOfBirth);
+		this.statut="Cleaner";
+	}
+	
+	public String getStatut() {
+		return statut;
+	}
+	public void setStatut(String statut) {
+		this.statut = statut;
 	}
 	public HashMap<String, String> getHours() {
 		return hours;

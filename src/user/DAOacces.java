@@ -1,4 +1,4 @@
-package bdd_final;
+package user;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -93,7 +93,7 @@ public class DAOacces {
 	
 	public void lister(){
 		try {
-			String strQuery= "SELECT * FROM acces;";
+			String strQuery= "SELECT * FROM user;";
 			Class.forName(strClassName);
 		
 			Statement stLogin = this.connection.createStatement();
@@ -112,9 +112,9 @@ public class DAOacces {
 		}
 	}
 	
-	public void addDAO(Acces a) {
+	public void addCleaner(Cleaner a) {
 		try {
-			String strQuery= "INSERT INTO acces VALUES("+a.getId()+",'"+a.getPrenom()+"','"+a.getLogin()+"','"+a.getPassword()+"','"+a.getStatut()+"',"+a.getAge()+");";
+			String strQuery= "INSERT INTO user (firstName,secondName,userName,email,passWord,age,phoneNumber,dateOfBirth,statut) VALUES('"+a.getFirstName()+"','"+a.getSecondName()+"','"+a.getUsername()+"','"+a.getEmail()+"','"+a.getPassword()+"',"+a.getAge()+","+a.getPhoneNumber()+",'"+a.getDateOfBirth()+"','"+a.getStatut()+"');";
 			Class.forName(strClassName);
 			
 			Statement stLogin = this.connection.createStatement();	
@@ -127,9 +127,40 @@ public class DAOacces {
 		}
 	}
 	
-	public void deleteDAO(Acces a) {
+	public void addProprietaire(Proprietaire a) {
 		try {
-			String strQuery= "DELETE FROM acces WHERE id="+a.getId()+";";
+			String strQuery= "INSERT INTO user (firstName,secondName,userName,email,passWord,age,phoneNumber,dateOfBirth,statut) VALUES('"+a.getFirstName()+"','"+a.getSecondName()+"','"+a.getUsername()+"','"+a.getEmail()+"','"+a.getPassword()+"',"+a.getAge()+","+a.getPhoneNumber()+",'"+a.getDateOfBirth()+"','"+a.getStatut()+"');";
+			Class.forName(strClassName);
+			
+			Statement stLogin = this.connection.createStatement();	
+			int rsLogin = stLogin.executeUpdate(strQuery);
+		}
+		catch(ClassNotFoundException e) {  
+			System.err.println("Driver non chargé !");  e.printStackTrace();
+		} catch(SQLException e) {
+			System.err.println("Erreur");  e.printStackTrace();
+		}
+	}
+	
+	public void deleteCleaner(Cleaner a) {
+		try {
+			String strQuery= "DELETE FROM user WHERE userName='"+a.getUsername()+"';";
+			Class.forName(strClassName);
+		
+			Statement stLogin = this.connection.createStatement();
+			
+			int rsLogin = stLogin.executeUpdate(strQuery);
+		}
+		catch(ClassNotFoundException e) {  
+			System.err.println("Driver non chargé !");  e.printStackTrace();
+		} catch(SQLException e) {
+			System.err.println("Erreur");  e.printStackTrace();
+		}
+	}
+	
+	public void deleteProprietaire(Proprietaire a) {
+		try {
+			String strQuery= "DELETE FROM user WHERE userName='"+a.getUsername()+"';";
 			Class.forName(strClassName);
 		
 			Statement stLogin = this.connection.createStatement();

@@ -21,7 +21,7 @@ public class Utilisateur {
 	float globalGrade;
 
 	public Utilisateur(String username, String firstName, String secondName, int age, String password,
-			String email, String description, String phoneNumber, String dateOfBirth) {
+			String email, String phoneNumber, String dateOfBirth) {
 		super();
 		this.username = username;
 		this.firstName = firstName;
@@ -29,7 +29,6 @@ public class Utilisateur {
 		this.age = age;
 		this.password = password;
 		this.email = email;
-		this.description = description;
 		this.phoneNumber = phoneNumber;
 		this.dateOfBirth = dateOfBirth;
 		this.comment = new HashMap<Float, String>();

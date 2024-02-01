@@ -1,4 +1,4 @@
-package bdd_final;
+package user;
 
 public class Acces {
 	private int id;
