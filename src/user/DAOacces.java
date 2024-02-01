@@ -25,7 +25,7 @@ public class DAOacces {
 			Class.forName(this.strClassName);
 			Connection conn = DriverManager.getConnection(this.strUrl, this.login, this.password);
 			this.connection=conn;
-			System.out.println("Connection réussie");
+			System.out.println("Connection à la BDD "+dbName+" réussie");
 		}
 		catch(ClassNotFoundException e) {  
 			System.err.println("Driver non chargé !");  e.printStackTrace();
@@ -94,19 +94,14 @@ public class DAOacces {
 	public void lister(){
 		try {
 			String strQuery= "SELECT * FROM user;";
-			Class.forName(strClassName);
 		
 			Statement stLogin = this.connection.createStatement();
-			
 			ResultSet rsLogin = stLogin.executeQuery(strQuery);
 			
 			while(rsLogin.next()) {
-				System.out.println("ID["+ rsLogin.getInt(1) +"] prenom["
-				+ rsLogin.getString(2) + "] Statut[" + rsLogin.getString(5));
+				System.out.println("ID["+ rsLogin.getInt(1) +"]\t username["
+				+ rsLogin.getString(4) + "]\t Statut[" + rsLogin.getString(14)+"]");
 			}
-		}
-		catch(ClassNotFoundException e) {  
-			System.err.println("Driver non chargé !");  e.printStackTrace();
 		} catch(SQLException e) {
 			System.err.println("Erreur");  e.printStackTrace();
 		}
@@ -115,14 +110,11 @@ public class DAOacces {
 	public void addCleaner(Cleaner a) {
 		try {
 			String strQuery= "INSERT INTO user (firstName,secondName,userName,email,passWord,age,phoneNumber,dateOfBirth,statut) VALUES('"+a.getFirstName()+"','"+a.getSecondName()+"','"+a.getUsername()+"','"+a.getEmail()+"','"+a.getPassword()+"',"+a.getAge()+","+a.getPhoneNumber()+",'"+a.getDateOfBirth()+"','"+a.getStatut()+"');";
-			Class.forName(strClassName);
 			
 			Statement stLogin = this.connection.createStatement();	
 			int rsLogin = stLogin.executeUpdate(strQuery);
 		}
-		catch(ClassNotFoundException e) {  
-			System.err.println("Driver non chargé !");  e.printStackTrace();
-		} catch(SQLException e) {
+		catch(SQLException e) {
 			System.err.println("Erreur");  e.printStackTrace();
 		}
 	}
@@ -130,14 +122,11 @@ public class DAOacces {
 	public void addProprietaire(Proprietaire a) {
 		try {
 			String strQuery= "INSERT INTO user (firstName,secondName,userName,email,passWord,age,phoneNumber,dateOfBirth,statut) VALUES('"+a.getFirstName()+"','"+a.getSecondName()+"','"+a.getUsername()+"','"+a.getEmail()+"','"+a.getPassword()+"',"+a.getAge()+","+a.getPhoneNumber()+",'"+a.getDateOfBirth()+"','"+a.getStatut()+"');";
-			Class.forName(strClassName);
 			
 			Statement stLogin = this.connection.createStatement();	
 			int rsLogin = stLogin.executeUpdate(strQuery);
 		}
-		catch(ClassNotFoundException e) {  
-			System.err.println("Driver non chargé !");  e.printStackTrace();
-		} catch(SQLException e) {
+		catch(SQLException e) {
 			System.err.println("Erreur");  e.printStackTrace();
 		}
 	}
@@ -165,7 +154,7 @@ public class DAOacces {
 		
 			Statement stLogin = this.connection.createStatement();
 			
-			int rsLogin = stLogin.executeUpdate(strQuery);
+			stLogin.executeUpdate(strQuery);
 		}
 		catch(ClassNotFoundException e) {  
 			System.err.println("Driver non chargé !");  e.printStackTrace();
@@ -173,4 +162,22 @@ public class DAOacces {
 			System.err.println("Erreur");  e.printStackTrace();
 		}
 	}
+	
+	public boolean connection(String username,String mdp) {
+		try {
+			String strQuery= "SELECT userName,passWord FROM user WHERE userName = '"+username+"' AND passWord = '"+mdp+"';";
+		
+			Statement stLogin = this.connection.createStatement();
+			ResultSet rsLogin = stLogin.executeQuery(strQuery);
+			
+			while(rsLogin.next()) {
+				return true;
+			}
+		}
+		catch(SQLException e) {
+			System.err.println("Erreur");  e.printStackTrace();
+		}
+		return false;
+	}
 }
+
