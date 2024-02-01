@@ -7,12 +7,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DAOacces {
-	String strClassName;
-	String dbName;
-	String login;
-	String password;
-	String strUrl;
-	Connection connection;
+	private String strClassName;
+	private String dbName;
+	private String login;
+	private String password;
+	private String strUrl;
+	private Connection connection;
+	private Statement stLogin;
+	
 	
 	public DAOacces(String dbName, String login, String password) {
 		this.strClassName ="com.mysql.cj.jdbc.Driver";
@@ -23,9 +25,10 @@ public class DAOacces {
 		
 		try {
 			Class.forName(this.strClassName);
-			Connection conn = DriverManager.getConnection(this.strUrl, this.login, this.password);
-			this.connection=conn;
+			this.connection=DriverManager.getConnection(this.strUrl, this.login, this.password);
 			System.out.println("Connection à la BDD "+dbName+" réussie");
+			
+			this.stLogin = this.connection.createStatement();
 		}
 		catch(ClassNotFoundException e) {  
 			System.err.println("Driver non chargé !");  e.printStackTrace();
@@ -49,7 +52,11 @@ public class DAOacces {
 	public void setDbName(String dbName) {
 		this.dbName = dbName;
 	}
-
+	
+	public Statement getStLogin() {
+		return stLogin;
+	}
+	
 	public String getLogin() {
 		return login;
 	}

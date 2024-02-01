@@ -7,25 +7,12 @@ public class App {
 	public static void main(String[] args) {
 		Scanner key =   new Scanner(System.in);
 		
+		System.out.println("nom d'utilisateur : ");
+		String username = key.next();
+		System.out.println("mot de passe : ");
+		String mdp = key.next();
 		
-		boolean flag = false;
-		
-		while(flag == false) {
-			System.out.println("nom d'utilisateur : ");
-			String username = key.next();
-			System.out.println("mot de passe : ");
-			String mdp = key.next();
-			
-			DAOacces userBDD = new DAOacces("click_n_clean","root","");
-			
-			if(userBDD.connection(username, mdp)) {
-				flag=true;
-				System.out.println("vous etes connécté en tant que "+username);
-			}
-			else {
-				System.out.println("connection échoué");
-			}
-		}
+		new TestController(username,mdp);
 		
 		
 		
