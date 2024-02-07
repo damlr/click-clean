@@ -1,23 +1,23 @@
 package user;
 
-import java.util.HashMap;
-
 /**
  * Classe de prestataire
  * @author Simon
  */
 public class Cleaner extends Utilisateur{
 	private int missionDone;
-	private int array;
 	private int salaryPerHour;
-	private int experience;
-	String statut;
-	private HashMap<String, String>hours;
+	private String statut;
+	private int perimeter;
 	
-	public Cleaner(String username, String firstName, String secondName, int age, String password, String email,
-			String description, String phoneNumber, String dateOfBirth) {
-		super(username, firstName, secondName, age, password, email, phoneNumber, dateOfBirth);
+	public Cleaner(String firstName, String secondName,String username,String email,String password,
+			int age,String description,String phoneNumber, String dateOfBirth, float globalGrade, int missionDone,
+			int perimeter,int salaryPerHour) {
+		super(username, firstName, secondName, age, password, email, phoneNumber, dateOfBirth, globalGrade,description);
 		this.statut="Cleaner";
+		this.missionDone = missionDone;
+		this.salaryPerHour = salaryPerHour;
+		this.perimeter = perimeter;
 	}
 	
 	public String getStatut() {
@@ -25,17 +25,6 @@ public class Cleaner extends Utilisateur{
 	}
 	public void setStatut(String statut) {
 		this.statut = statut;
-	}
-	public HashMap<String, String> getHours() {
-		return hours;
-	}
-	/**
-	 * Hashmap du planning des jours de la semaine
-	 * @param a Jours au format suivant: MON, TUE, WED, THU, FRI, SAT, SUN
-	 * @param b Plage horraire en format 24h associé au jour par exemple 8-13, 14-18
-	 */
-	public void setHours(String a, String b) {
-		this.hours.put(a,b);
 	}
 
 	public int getMissionDone() {
@@ -46,15 +35,15 @@ public class Cleaner extends Utilisateur{
 		this.missionDone = missionDone;
 	}
 
-	public int getArray() {
-		return array;
+	public int getPerimeter() {
+		return this.perimeter;
 	}
 	/**
 	 * Rayon en kilometre autour du domicile du prestataire definissant la zone d'action du cleaner
 	 * @param array
 	 */
-	public void setArray(int array) {
-		this.array = array;
+	public void setPerimeter(int perimeter) {
+		this.perimeter = perimeter;
 	}
 	
 	public int getSalaryPerHour() {
@@ -71,11 +60,4 @@ public class Cleaner extends Utilisateur{
 	 * Nombre de mission deja effectue par le cleaner
 	 * @return
 	 */
-	public int getExperience() {
-		return experience;
-	}
-
-	public void setExperience(int experience) {
-		this.experience = experience;
-	}
 }

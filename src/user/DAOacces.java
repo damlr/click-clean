@@ -100,63 +100,23 @@ public class DAOacces {
 	
 	public void lister(){
 		try {
-			String strQuery= "SELECT * FROM user;";
+			String strQuery= "SELECT * FROM users;";
 		
 			Statement stLogin = this.connection.createStatement();
 			ResultSet rsLogin = stLogin.executeQuery(strQuery);
 			
 			while(rsLogin.next()) {
 				System.out.println("ID["+ rsLogin.getInt(1) +"]\t username["
-				+ rsLogin.getString(4) + "]\t Statut[" + rsLogin.getString(14)+"]");
+				+ rsLogin.getString(4) + "]\t Statut[" + rsLogin.getString(17)+"]");
 			}
 		} catch(SQLException e) {
 			System.err.println("Erreur");  e.printStackTrace();
 		}
 	}
 	
-	public void addCleaner(Cleaner a) {
+	public void deleteUser(String username) {
 		try {
-			String strQuery= "INSERT INTO user (firstName,secondName,userName,email,passWord,age,phoneNumber,dateOfBirth,statut) VALUES('"+a.getFirstName()+"','"+a.getSecondName()+"','"+a.getUsername()+"','"+a.getEmail()+"','"+a.getPassword()+"',"+a.getAge()+","+a.getPhoneNumber()+",'"+a.getDateOfBirth()+"','"+a.getStatut()+"');";
-			
-			Statement stLogin = this.connection.createStatement();	
-			int rsLogin = stLogin.executeUpdate(strQuery);
-		}
-		catch(SQLException e) {
-			System.err.println("Erreur");  e.printStackTrace();
-		}
-	}
-	
-	public void addProprietaire(Proprietaire a) {
-		try {
-			String strQuery= "INSERT INTO user (firstName,secondName,userName,email,passWord,age,phoneNumber,dateOfBirth,statut) VALUES('"+a.getFirstName()+"','"+a.getSecondName()+"','"+a.getUsername()+"','"+a.getEmail()+"','"+a.getPassword()+"',"+a.getAge()+","+a.getPhoneNumber()+",'"+a.getDateOfBirth()+"','"+a.getStatut()+"');";
-			
-			Statement stLogin = this.connection.createStatement();	
-			int rsLogin = stLogin.executeUpdate(strQuery);
-		}
-		catch(SQLException e) {
-			System.err.println("Erreur");  e.printStackTrace();
-		}
-	}
-	
-	public void deleteCleaner(Cleaner a) {
-		try {
-			String strQuery= "DELETE FROM user WHERE userName='"+a.getUsername()+"';";
-			Class.forName(strClassName);
-		
-			Statement stLogin = this.connection.createStatement();
-			
-			int rsLogin = stLogin.executeUpdate(strQuery);
-		}
-		catch(ClassNotFoundException e) {  
-			System.err.println("Driver non chargé !");  e.printStackTrace();
-		} catch(SQLException e) {
-			System.err.println("Erreur");  e.printStackTrace();
-		}
-	}
-	
-	public void deleteProprietaire(Proprietaire a) {
-		try {
-			String strQuery= "DELETE FROM user WHERE userName='"+a.getUsername()+"';";
+			String strQuery= "DELETE FROM users WHERE username='"+username+"';";
 			Class.forName(strClassName);
 		
 			Statement stLogin = this.connection.createStatement();
@@ -168,23 +128,6 @@ public class DAOacces {
 		} catch(SQLException e) {
 			System.err.println("Erreur");  e.printStackTrace();
 		}
-	}
-	
-	public boolean connection(String username,String mdp) {
-		try {
-			String strQuery= "SELECT userName,passWord FROM user WHERE userName = '"+username+"' AND passWord = '"+mdp+"';";
-		
-			Statement stLogin = this.connection.createStatement();
-			ResultSet rsLogin = stLogin.executeQuery(strQuery);
-			
-			while(rsLogin.next()) {
-				return true;
-			}
-		}
-		catch(SQLException e) {
-			System.err.println("Erreur");  e.printStackTrace();
-		}
-		return false;
 	}
 }
 

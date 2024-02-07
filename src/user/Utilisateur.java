@@ -1,5 +1,6 @@
 package user;
 import java.util.HashMap;
+import java.sql.*;
 /**
  * Class mere utilisateur regroupant touts les attributs et methodes communes aux trois types d'utilisateurs.
  * @author Simon 
@@ -16,12 +17,12 @@ public class Utilisateur {
 	private String description;
 	private String phoneNumber;
 	private String dateOfBirth;
-	private String dateOfCreation;
+	private Date dateOfCreation;
 	private HashMap<Float, String> comment;
 	float globalGrade;
 
 	public Utilisateur(String username, String firstName, String secondName, int age, String password,
-			String email, String phoneNumber, String dateOfBirth) {
+			String email, String phoneNumber, String dateOfBirth, float globalGrade,String description) {
 		super();
 		this.username = username;
 		this.firstName = firstName;
@@ -32,6 +33,8 @@ public class Utilisateur {
 		this.phoneNumber = phoneNumber;
 		this.dateOfBirth = dateOfBirth;
 		this.comment = new HashMap<Float, String>();
+		this.globalGrade = globalGrade;
+		this.description = description;
 	}
 
 	public float getGlobalGrade() {
@@ -104,11 +107,11 @@ public class Utilisateur {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public String getDateOfCreation() {
+	public Date getDateOfCreation() {
 		return dateOfCreation;
 	}
 
-	public void setDateOfCreation(String dateOfCreation) {
+	public void setDateOfCreation(Date dateOfCreation) {
 		this.dateOfCreation = dateOfCreation;
 	}
 	

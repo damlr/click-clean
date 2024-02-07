@@ -11,9 +11,9 @@ public class Proprietaire extends Utilisateur{
 	ArrayList<Property> properties;
 	String statut;
 
-	public Proprietaire(String username, String firstName, String secondName, int age, String password, String email,
-			String description, String phoneNumber, String dateOfBirth) {
-		super(username, firstName, secondName, age, password, email, phoneNumber, dateOfBirth);
+	public Proprietaire(String firstName, String secondName,String username,String email, String password, 
+			 int age,String description, String phoneNumber, String dateOfBirth,float globalGrade) {
+		super(username, firstName, secondName, age, password, email, phoneNumber, dateOfBirth,globalGrade,description);
 		this.statut = "Proprietaire";
 		// TODO Auto-generated constructor stub
 	}

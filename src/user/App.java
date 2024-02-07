@@ -1,34 +1,69 @@
 package user;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class App {
 
 	public static void main(String[] args) {
-		Scanner key =   new Scanner(System.in);
+		//Scanner scan = new Scanner(System.in);
+		//String pseudo;
+		//String mdp;
+		 
+		//System.out.println("pseudo:");
+		//pseudo = scan.next();
+		//System.out.println("mot de passe:");
+		//mdp = scan.next();
 		
-		System.out.println("nom d'utilisateur : ");
-		String username = key.next();
-		System.out.println("mot de passe : ");
-		String mdp = key.next();
+		//new ControllerConnexion(pseudo,mdp);
 		
-		new TestController(username,mdp);
+		Boolean flag = false;
+		Scanner scan = new Scanner(System.in);
+		String isCleaner;
 		
+		System.out.println("êtes vous un cleaner? (y/n)");
+		isCleaner = scan.next();
 		
+		while(!flag) {
+			if(isCleaner.equals("y")) {
+				flag=true;
+				
+				System.out.println("Veuillez entrer ces champs dans l'ordre :\n-Nom\n-Prenom\n-Pseudonyme\n-Age\n-Mot de passe\n-Adresse mail\n-Bio\n-Numero de telephone\n-Date de naissance\n-Perimètre de service\n-Tarif horaire");
+				
+				String nom = scan.next();
+				String prenom = scan.next();
+				String pseudo = scan.next();
+				int age = scan.nextInt();
+				String mdp = scan.next();
+				String email = scan.next();
+				String bio = scan.next();
+				String tel = scan.next();
+				String dateNaissance = scan.next();
+				int perimeter = scan.nextInt();
+				int tarif = scan.nextInt();
+				
+				new ControllerCreateAccount(true, nom, prenom, pseudo,email,mdp,age,bio,tel,dateNaissance,0,0,perimeter,tarif);
+			}
+			else if(isCleaner.equals("n")) {
+				flag=true;
+				
+				System.out.println("Veuillez entrer ces champs dans l'ordre :\n-Nom\n-Prenom\n-Pseudonyme\n-Age\n-Mot de passe\n-Adresse mail\n-Bio\n-Numero de telephone\n-Date de naissance");
+				
+				String nom = scan.next();
+				String prenom = scan.next();
+				String pseudo = scan.next();
+				int age = scan.nextInt();
+				String mdp = scan.next();
+				String email = scan.next();
+				String bio = scan.next();
+				String tel = scan.next();
+				String dateNaissance = scan.next();
+				
+				new ControllerCreateAccount(false, nom, prenom, pseudo,email,mdp,age,bio,tel,dateNaissance,0, 0, 0, 0);
+			}
+			else {
+				System.out.println("Erreur");
+			}
+		}
 		
-		// TODO Auto-generated method stub
-		//Invite invite1 = new Invite();
-		//invite1.newAccount(true,"sdufac","Dufac","Simon",22,"azerty","simon.dufac@gmail.com","blablabla","07293","22/10/2001");
-		//invite1.newAccount(false,"abc","Dupont","Pierre",22,"azerty","simon.dufac@gmail.com","blablabla","07293","22/10/2001");
-		
-		//Cleaner user1 = new Cleaner("sdufac","Dufac","Simon",22,"azerty","simon.dufac@gmail.com","blablabla","07293","22/10/2001");
-		//Proprietaire user2 = new Proprietaire("abc","Dupont","Pierre",22,"azerty","simon.dufac@gmail.com","blablabla","07293","22/10/2001");
-		
-		
-		//userBDD.deleteProprietaire(user2);
-		//userBDD.deleteCleaner(user1);
-		//suserBDD.lister();
-
-		
-	}
+	}	
 }
