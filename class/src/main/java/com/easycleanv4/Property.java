@@ -4,12 +4,13 @@ public class Property {
     private String adress;
     private int num_adress;
     private int surface;
+    private int code_entrer;
     private String commentary_property;
 
     public Property(String adress, int num_adress, String com_property, int surface) {
         this.adress = adress;
         this.commentary_property = com_property;
-        this.num_adress = num_adress;
+        this.code_entrer = code_entrer;
         this.surface = surface;
     }
 

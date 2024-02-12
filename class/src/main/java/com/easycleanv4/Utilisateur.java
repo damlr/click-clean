@@ -11,6 +11,7 @@ import java.util.HashMap;
 public class Utilisateur {
 
 	private String username;
+	private int id_user;
 	private String firstName;
 	private String secondName;
 	private int age;
@@ -24,9 +25,10 @@ public class Utilisateur {
 	private HashMap<Float, String> comment;
 	float globalGrade;
 
-	public Utilisateur(String username, String firstName, String secondName, int age, String password,
+	public Utilisateur(int id_user, String username, String firstName, String secondName, int age, String password,
 			String email, String phoneNumber, String dateOfBirth) {
 		super();
+		this.id_user = id_user;
 		this.username = username;
 		this.firstName = firstName;
 		this.secondName = secondName;
@@ -36,6 +38,14 @@ public class Utilisateur {
 		this.phoneNumber = phoneNumber;
 		this.dateOfBirth = dateOfBirth;
 		this.comment = new HashMap<Float, String>();
+	}
+
+	public int getId_user() {
+		return id_user;
+	}
+
+	public void setId_user(int id_user) {
+		this.id_user = id_user;
 	}
 
 	public float getGlobalGrade() {

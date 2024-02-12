@@ -2,6 +2,8 @@ package com.easycleanv4;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import com.easycleanv4.GeocodingService;
 
 public class ControleurRechercheMission {
     private String strClassName;
@@ -10,11 +12,11 @@ public class ControleurRechercheMission {
     private String password;
     private String strUrl;
 
+    HashMap<Integer, Integer> ResultMission = new HashMap<Integer, Integer>();
+
     public ControleurRechercheMission() {
+
         this.strClassName = "com.mysql.cj.jdbc.Driver";
-        this.dbName = dbName;
-        this.login = login;
-        this.password = password;
         this.strUrl = "jdbc:mysql://localhost:3306/" + dbName + "?useSSL=false&serverTimezone=Europe/Paris";
 
         boolean flag = false;
@@ -26,8 +28,8 @@ public class ControleurRechercheMission {
 
             while (rsLogin.next()) {
                 String idMission = rsLogin.getString("mission_id");
-                String missionName = rsLogin.getString("instruction");
-                System.out.println("Mission ID: " + idMission + ", Libellé: " + missionName);
+                System.out.println("Mission ID: " + idMission);
+
             }
             flag = true;
         } catch (SQLException e) {
