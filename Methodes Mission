@@ -1,0 +1,4 @@
+//methode pour calculer la zone d’action par rapport à l’adresse
+public void calcMission( ) {
+		this.add() ;
+}
