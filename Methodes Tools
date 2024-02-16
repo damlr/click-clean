@@ -1,9 +1,0 @@
-//methode pour compter les users
-public void compterUsers( ) {
-		this.add() ;
-}
-
-//methode pour compter les proprietés
-public void compterProprietes( ) {
-		this.add() ;
-}
